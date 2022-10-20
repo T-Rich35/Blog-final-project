@@ -1,22 +1,22 @@
-.post {
+.blog {
   width: 375px;
   margin: 0px 25px 40px 25px;
 }
 
-.postimg {
+.blogimg {
   width: 100%;
   height: 280px;
   object-fit: cover;
   border-radius: 7px;
 }
 
-.postinfo {
+.bloginfo {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.postcat {
+.blogcat {
   font-family: "Varela Round", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 11px;
@@ -27,15 +27,16 @@
   cursor: pointer;
 }
 
-.posttitle {
-  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+.blogtitle {
+  font-family: "font-family: 'Combo', cursive";
   font-size: 24px;
   font-weight: 900;
   margin-top: 15px;
   cursor: pointer;
+  color: #25171a;
 }
 
-.postdate {
+.blogdate {
   font-family: "Lora", serif;
   font-style: italic;
   font-size: 13px;
@@ -44,11 +45,28 @@
   margin-top: 15px;
 }
 
-.postdesc {
+.blogdesc {
   font-family: "Varela Round", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   color: #444444;
   margin-top: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.readbtn {
+  transition-duration: 1.5ms;
+  :hover {
+    transform: translateY(-1);
+  }
+
+  background-color: rgb(63, 170, 56);
+  text-decoration: white;
+  border: 5px;
+  cursor: pointer;
 }

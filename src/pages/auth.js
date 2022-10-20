@@ -19,7 +19,6 @@ export default function Auth() {
         />
         <button className="loginbutton">Login</button>
       </form>
-      <button className="loginregisterbutton">signup</button>
     </div>
   );
 }

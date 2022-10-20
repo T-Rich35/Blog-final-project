@@ -1,37 +1,37 @@
-.singlepost {
+.singleblog {
   flex: 9;
 }
 
-.singlepostWrapper {
+.singleblogWrapper {
   padding: 20px;
   padding-right: 0;
 }
 
-.singlepostimg {
+.singleblogimg {
   width: 100%;
   height: 300px;
   border-radius: 5px;
   object-fit: cover;
 }
 
-.singleposttitle {
+.singleblogtitle {
   text-align: center;
   margin: 10px;
   font-size: 28px;
   font-family: "Lora", sans-serif;
 }
 
-.singlepostedit {
+.singleblogedit {
   float: right;
   font-size: 16px;
 }
 
-.singlePostIcon {
+.singleblogIcon {
   margin-left: 10px;
   cursor: pointer;
 }
 
-.singleposticon {
+.singleblogicon {
   color: cadetblue;
   padding-right: 15px;
 }
@@ -40,7 +40,7 @@
   color: red;
 }
 
-.singlepostinfo {
+.singlebloginfo {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;

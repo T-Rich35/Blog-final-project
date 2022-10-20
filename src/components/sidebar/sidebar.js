@@ -24,7 +24,7 @@ export default function Sidebar() {
         <span className="sidebartitle">Follow me</span>
         <div className="sidebarsocial"></div>
         <i className="sidebaricon">
-          <FontAwesomeIcon icon="twitter" />
+          <i className="fa-brands fa-twitter"></i>
         </i>
       </div>
     </div>
