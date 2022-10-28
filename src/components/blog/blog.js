@@ -1,26 +1,43 @@
-import React from "react";
+import React, { Component } from "react";
 import moment from "moment/moment";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import BlogItem from "./blog-item";
 
-export default function blog({ blog }) {
-  return (
-    <div className="blog">
-      {blog.image && <img className="blogimg" src={blog.image} alt="" />}
+class Blog extends Component {
+  constructor() {
+    super();
 
-      <div className="bloginfo">
-        <div className="blogcats"></div>
-        <Link to={`/blog/${blog._id}`} className="link">
-          <span className="blogtitle"> {blog.title}</span>
-        </Link>
-        <hr />
-        <span className="blogdate">
-          {moment(blog.createdAt).format("MMM DD, YYYY")}
-        </span>
-      </div>
-      <p className="blogdesc">{blog.content}</p>
-      {/* <Link href={`/blog/${blog.content}`}> */}
-      <span className="readbtn">Read more</span>
-      {/* </Link> */}
-    </div>
-  );
+    this.state = {
+      blogItems: [],
+    };
+
+    this.getBlogItems = this.getBlogItems.bind(this);
+  }
+
+  getBlogItems() {
+    axios
+      .get("http://127.0.0.1:5000/blogs")
+      .then((response) => {
+        this.setState({
+          blogItems: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log("getBlogItems", error);
+      });
+  }
+
+  componentWillMount() {
+    this.getBlogItems();
+  }
+
+  render() {
+    const blogRecords = this.state.blogItems.map((blog) => {
+      return <BlogItem key={blog.id} blog={blog} />;
+    });
+    return <div className="blogs">{blogRecords}</div>;
+  }
 }
+
+export default Blog;

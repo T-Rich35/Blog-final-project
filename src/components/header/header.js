@@ -1,4 +1,6 @@
 import React from "react";
+import ImageSlider from "../imageSlider";
+import { SliderData } from "../sliderData";
 
 export default function Header() {
   return (
@@ -7,11 +9,9 @@ export default function Header() {
         <span className="headertitlesm">Dodge Challenger & Bmw, Raptor</span>
         <span className="headertitlelg">Blogs</span>
       </div>
-      <img
-        className="headerimg"
-        src="	https://www.motorbiscuit.com/wp-content/uploads/2020/06/2019-Dodge-Challenger-SRT-Hellcat.jpg"
-        alt=""
-      ></img>
+      <div>
+        <ImageSlider slides={SliderData} className="headerimg" />
+      </div>
     </div>
   );
 }

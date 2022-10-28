@@ -1,7 +1,19 @@
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import axios from "axios";
 
 export default function Sidebar() {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    const getBlogs = async () => {
+      const response = await axios.get("http://127.0.0.1:5000/blogs");
+      setBlogs(response.data);
+    };
+    getBlogs();
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="sidebaritem">
@@ -9,15 +21,23 @@ export default function Sidebar() {
         <img src="https://wallpapercave.com/wp/wp3879671.jpg" alt="" />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-          odit, qui, aut facere veritatis, nostrum totam ea animi nesciunt.
+          odit, qui, aut facere veritatis, nostrum totam ea animi nesciunt Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Assumenda odit,
+          qui, aut facere veritatis, nostrum totam ea animi nesciunt Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Assumenda odit, qui, aut
+          facere veritatis, nostrum totam ea animi nesciunt.
         </p>
       </div>
       <div className="sidebaritem">
-        <span className="sidebartitle">M5 </span>
+        <span className="sidebartitle">Blogs</span>
         <ul className="sidebarlist">
-          <li className="sidebarlistitem">Challenger</li>
-          <li className="sidebarlistitem">Bmw</li>
-          <li className="sidebarlistitem">Raptor</li>
+          {blogs.map((b) => (
+            <Link to={`/blog/2`} className="link">
+              <li className="sidebarlistitem" key={b.title}>
+                {b.title}
+              </li>
+            </Link>
+          ))}
         </ul>
       </div>
       <div className="sidebaritem">

@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import Auth from "../../pages/auth";
+
 export default function TopBar() {
   return (
     <div className="nav-wrapper">
@@ -27,14 +28,20 @@ export default function TopBar() {
           </NavLink>
         </div>
         <div className="toplistitem">
-          <NavLink to="/addblog" activeClassName="nav-link-active">
-            Add Blog
-          </NavLink>
+          {true ? (
+            <NavLink to="/addblog" activeClassName="nav-link-active">
+              Add Blog
+            </NavLink>
+          ) : (
+            (to = "/auth")
+          )}
         </div>
       </div>
-      <button className="topright" onClick={Auth}>
-        Sign in with Google
-      </button>
+      <NavLink to="/auth" activeClassName="nav-link-active">
+        <button className="topright" onClick={Auth}>
+          log in
+        </button>
+      </NavLink>
     </div>
   );
 }
