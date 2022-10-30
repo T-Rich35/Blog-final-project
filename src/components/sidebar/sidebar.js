@@ -43,9 +43,12 @@ export default function Sidebar() {
       <div className="sidebaritem">
         <span className="sidebartitle">Follow me</span>
         <div className="sidebarsocial"></div>
-        <i className="sidebaricon">
-          <i className="fa-brands fa-twitter"></i>
-        </i>
+
+        <Link to={"/contact"} className="link">
+          <i className="sidebaricon">
+            <i className="fa-brands fa-twitter"></i>
+          </i>
+        </Link>
       </div>
     </div>
   );

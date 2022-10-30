@@ -13,6 +13,7 @@ class Blog extends Component {
     };
 
     this.getBlogItems = this.getBlogItems.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   getBlogItems() {
@@ -34,7 +35,15 @@ class Blog extends Component {
 
   render() {
     const blogRecords = this.state.blogItems.map((blog) => {
-      return <BlogItem key={blog.id} blog={blog} />;
+      if (this.props.loggedInStatus === "LOGGED_IN") {
+        return (
+          <div className="admin-wrapper">
+            <BlogItem key={blog.id} blog={blog} />
+          </div>
+        );
+      } else {
+        return <BlogItem key={blog.id} blog={blog} />;
+      }
     });
     return <div className="blogs">{blogRecords}</div>;
   }

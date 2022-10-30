@@ -52,8 +52,9 @@ export default class Login extends Component {
       <div>
         <div>{this.state.errorText}</div>
 
-        <form onSubmit={this.handleSubmit}>
+        <form className="loginform" onSubmit={this.handleSubmit}>
           <input
+            className="logininput"
             type="text"
             name="email"
             placeholder="Enter your email"
@@ -62,6 +63,7 @@ export default class Login extends Component {
           />
 
           <input
+            className="logininput"
             type="password"
             name="password"
             placeholder="your password"
@@ -70,7 +72,7 @@ export default class Login extends Component {
           />
 
           <div>
-            <button type="submit">Login</button>
+            <button className="loginbutton">Login</button>
           </div>
         </form>
       </div>

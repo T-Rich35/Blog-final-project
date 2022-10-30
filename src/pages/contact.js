@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { FaPhone, FaEnvelope, FaMap } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -16,20 +16,20 @@ export default function Contact() {
         <div className="contact-bullet-points">
           <div className="bullet-point-group">
             <div className="icon">
-              <i class="fa-solid fa-phone"></i>
+              <FaPhone />
             </div>
             <div className="text">555-555-5555</div>
           </div>
 
           <div className="bullet-point-group">
             <div className="icon">
-              <i class="fa-solid fa-envelope"></i>
+              <FaEnvelope />
             </div>
             <div className="text">Tee@gmail.com</div>
           </div>
           <div className="bullet-point-group">
             <div className="icon">
-              <i class="fa-solid fa-map"></i>
+              <FaMap />
             </div>
             <div className="text">BMW, AL</div>
           </div>

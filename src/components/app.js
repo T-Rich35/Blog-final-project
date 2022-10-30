@@ -22,6 +22,7 @@ export default class App extends Component {
 
     this.handleSuccessfulLogin = this.handleSuccessfulLogin.bind(this);
     this.handleUnsuccessfulLogin = this.handleUnsuccessfulLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleSuccessfulLogin() {
@@ -36,12 +37,60 @@ export default class App extends Component {
     });
   }
 
+  handleLogout() {
+    this.setState({
+      loggedInStatus: "NOT_LOGGED_IN",
+    });
+  }
+
+  checkLoginStatus() {
+    return axios
+      .post("http://127.0.0.1:5000/login", {
+        email: "Duke@gmail.com",
+        password: "Bad",
+      })
+      .then((response) => {
+        const loggedIn = response.data.successful;
+        const loggedInStatus = this.state.loggedInStatus;
+
+        // If loggedIn and status successful => return data
+        // If loggedIn status NOT_LOGGED_IN => update state
+        // If not loggedIn and status LOGGED_IN => update state
+
+        if (loggedIn && loggedInStatus === "LOGGED_IN") {
+          return loggedIn;
+        } else if (loggedIn && loggedInStatus === "NOT_LOGGED_IN") {
+          this.setState({
+            loggedInStatus: "LOGGED_IN",
+          });
+        } else if (!loggedIn && loggedInStatus === "LOGGED_IN") {
+          this.setState({
+            loggedInStatus: "NOT_LOGGED_IN",
+          });
+        }
+      })
+      .catch((error) => {
+        console.log("Error", error);
+      });
+  }
+
+  componentDidMount() {
+    this.checkLoginStatus();
+  }
+
+  authorizedPages() {
+    return [<Route path="/addblog" component={AddBlog} />];
+  }
+
   render() {
     return (
       <div className="app">
         <Router>
           <div>
-            <TopBar loggedInStatus={this.state.loggedInStatus} />
+            <TopBar
+              loggedInStatus={this.state.loggedInStatus}
+              handleLogout={this.handleLogout}
+            />
 
             {/* <h2>{this.state.loggedInStatus}</h2> */}
 
@@ -61,7 +110,9 @@ export default class App extends Component {
 
               <Route path="/contact" component={Contact} />
               <Route path="/aboutme" component={About} />
-              <Route path="/addblog" component={AddBlog} />
+              {this.state.loggedInStatus === "LOGGED_IN"
+                ? this.authorizedPages()
+                : null}
               <Route path="/blog/:slug" component={SingleBlog} />
               <Route path="/blog/:Id" component={Single} />
               <Route component={NoMatch} />

@@ -1,9 +1,8 @@
-import React, { useEffect, useState, Component } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import moment from "moment/moment";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Sidebar from "../sidebar/sidebar";
+import { FaTrash, FaPen } from "react-icons/fa";
 
 export default class SingleBlog extends Component {
   constructor(props) {
@@ -42,9 +41,9 @@ export default class SingleBlog extends Component {
           <h1 className="singleblogtitle">
             <span>{title}</span>
             <div className="singleblogedit">
-              {<FontAwesomeIcon className="singleblogicon" icon="fa-pen" />}
+              <FaPen className="singleblogicon" />
 
-              {<FontAwesomeIcon className="singledeleteicon" icon="trash" />}
+              <FaTrash className="singledeleteicon" />
             </div>
           </h1>
           <div className="singlebloginfo">
@@ -57,8 +56,6 @@ export default class SingleBlog extends Component {
           </div>
           <p className="postdesc">{content}</p>
         </div>
-
-        {/* <div>{<Sidebar />}</div> */}
       </div>
     );
   }

@@ -13,7 +13,6 @@
 }
 
 .singleblogimg {
-  margin: 15px;
   width: 100%;
   height: 450px;
   border-radius: 5px;
@@ -39,12 +38,13 @@
 }
 
 .singleblogicon {
-  color: cadetblue;
+  color: black;
   padding-right: 15px;
 }
 
 .singledeleteicon {
   color: red;
+  cursor: pointer;
 }
 
 .singlebloginfo {
