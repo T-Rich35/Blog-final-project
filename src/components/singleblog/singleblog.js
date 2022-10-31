@@ -16,7 +16,9 @@ export default class SingleBlog extends Component {
 
   getBlogItem() {
     axios
-      .get(`http://127.0.0.1:5000/blog/${this.state.currentId}`)
+      .get(
+        `https://tcr-blog-backend.herokuapp.com/blog/${this.state.currentId}`
+      )
       .then((response) => {
         this.setState({
           blogItem: response.data,

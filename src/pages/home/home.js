@@ -13,7 +13,9 @@ export default function Home() {
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      const response = axios.get("http://127.0.0.1:5000/blogs");
+      const response = axios.get(
+        "https://tcr-blog-backend.herokuapp.com/blogs"
+      );
       setBlogs((await response).data);
       setIsLoading(false);
     };

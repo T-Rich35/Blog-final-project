@@ -8,7 +8,9 @@ export default function Sidebar() {
 
   useEffect(() => {
     const getBlogs = async () => {
-      const response = await axios.get("http://127.0.0.1:5000/blogs");
+      const response = await axios.get(
+        "https://tcr-blog-backend.herokuapp.com/blogs"
+      );
       setBlogs(response.data);
     };
     getBlogs();

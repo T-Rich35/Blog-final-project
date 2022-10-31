@@ -17,7 +17,7 @@ class Blog extends Component {
 
   getBlogItems() {
     axios
-      .get("http://127.0.0.1:5000/blogs")
+      .get("https://tcr-blog-backend.herokuapp.com/blogs")
       .then((response) => {
         this.setState({
           blogItems: response.data,

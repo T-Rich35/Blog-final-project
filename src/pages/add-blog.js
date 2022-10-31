@@ -20,7 +20,7 @@ export default function AddBlog() {
     setIsPending(true);
 
     axios
-      .post("http://127.0.0.1:5000/blog", {
+      .post("https://tcr-blog-backend.herokuapp.com/blog", {
         title,
         content,
         image,
