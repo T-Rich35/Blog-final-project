@@ -30,7 +30,7 @@ export default function AddBlog() {
         props.history.push("/");
       })
       .catch((error) => {
-        console.log("Blog", error);
+        "Blog", error;
       });
   };
 

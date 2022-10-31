@@ -70,7 +70,7 @@ export default class App extends Component {
         }
       })
       .catch((error) => {
-        console.log("Error", error);
+        "Error", error;
       });
   }
 

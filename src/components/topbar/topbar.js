@@ -27,7 +27,7 @@ const TopBar = (props) => {
         return response.data;
       })
       .catch((error) => {
-        console.log("Error signing out", error);
+        "Error signing out", error;
       });
   };
   return (

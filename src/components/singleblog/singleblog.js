@@ -25,7 +25,7 @@ export default class SingleBlog extends Component {
         });
       })
       .catch((error) => {
-        console.log("getBlogItem", error);
+        "getBlogItem", error;
       });
   }
 

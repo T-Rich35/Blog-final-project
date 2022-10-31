@@ -24,7 +24,7 @@ class Blog extends Component {
         });
       })
       .catch((error) => {
-        console.log("getBlogItems", error);
+        error;
       });
   }
 
