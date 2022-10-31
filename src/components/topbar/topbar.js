@@ -64,11 +64,7 @@ const TopBar = (props) => {
             <button onClick={handleSignOut} className="topright">
               Sign out
             </button>
-          ) : (
-            <Link to="/auth" className="link">
-              Sign In
-            </Link>
-          )}
+          ) : null}
         </div>
       </NavLink>
     </div>
