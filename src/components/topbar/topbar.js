@@ -60,7 +60,7 @@ const TopBar = (props) => {
       </div>
       <NavLink to="/auth" activeClassName="nav-link-active">
         <div className="topright">
-          {!props.loggedInStatus === "LOGGED_IN" ? (
+          {props.loggedInStatus === "LOGGED_IN" ? (
             <Link to="/auth" className="link">
               Sign In
             </Link>
