@@ -86,5 +86,9 @@
     "babel-register": "^6.26.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "uglifyjs-webpack-plugin": "^1.2.7"
+  },
+  "engines": {
+    "npm": ">=6.14.8 <7.0.0",
+    "node": ">=14.0.0 <17.0.0"
   }
 }
