@@ -13,7 +13,6 @@ class Blog extends Component {
     };
 
     this.getBlogItems = this.getBlogItems.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
   }
 
   getBlogItems() {

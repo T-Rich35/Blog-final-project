@@ -41,9 +41,7 @@ export default class SingleBlog extends Component {
           <h1 className="singleblogtitle">
             <span>{title}</span>
             <div className="singleblogedit">
-              <FaPen className="singleblogicon" />
-
-              <FaTrash className="singledeleteicon" />
+              {/* <FaTrash className="singledeleteicon" /> */}
             </div>
           </h1>
           <div className="singlebloginfo">

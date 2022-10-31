@@ -19,12 +19,14 @@ export default function Home() {
     };
     fetchBlogs();
   }, []);
+
   return (
     <div>
       <Header />
       <div className="home">
         {isLoading && <div>Loading...</div>}
         <Blog blogs={blogs} />
+
         <Sidebar />
       </div>
     </div>
