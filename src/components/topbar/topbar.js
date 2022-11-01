@@ -20,8 +20,8 @@ const TopBar = (props) => {
         password: "Bad",
       })
       .then((response) => {
+        console.log("res", response.data);
         if (response.data.successful == true) {
-          // props.history.push("/");
           props.handleLogout();
         }
         return response.data;
@@ -60,12 +60,15 @@ const TopBar = (props) => {
       </div>
       <NavLink to="/auth" activeClassName="nav-link-active">
         <div className="topright">
-          <Link to={"/auth"}></Link>
           {props.loggedInStatus === "LOGGED_IN" ? (
             <button onClick={handleSignOut} className="topright">
               Sign out
             </button>
-          ) : null}
+          ) : (
+            <Link to={"/auth"} className="link">
+              Sign in
+            </Link>
+          )}
         </div>
       </NavLink>
     </div>

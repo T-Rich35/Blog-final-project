@@ -46,8 +46,8 @@ export default class App extends Component {
   checkLoginStatus() {
     return axios
       .post("https://tcr-blog-backend.herokuapp.com/login", {
-        email: "Duke@gmail.com",
-        password: "Bad",
+        email: "",
+        password: "",
       })
       .then((response) => {
         const loggedIn = response.data.successful;
